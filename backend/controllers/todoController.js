@@ -4,6 +4,7 @@ const Todo = require("../models/Todo");
 // POST /api/todos
 exports.createTodo = async (req, res, next) => {
   try {
+    console.log("Entered")
     const { title, description } = req.body;
 
     if (typeof title !== "string" || !title.trim()) {
@@ -11,7 +12,7 @@ exports.createTodo = async (req, res, next) => {
         message: "Todo title is required"
       });
     }
-
+    
     if (
       description !== undefined &&
       typeof description !== "string"
